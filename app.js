@@ -17,8 +17,8 @@ const testimonials = [
 ];
 
 // getting my elements
-const image = document.querySelector('.person-image');
-const name = document.querySelector('.name');
+// const image = document.querySelector('.person-image');
+const personName = document.querySelector('.name');
 const role = document.querySelector('.role');
 const quote = document.querySelector('.quote-text');
 
@@ -26,12 +26,12 @@ const prevToggle = document.querySelector('.prev-toggle');
 const nextToggle = document.querySelector('.next-toggle');
 
 let counter = 0;
-let currentProfile = testimonials[counter];
 
-// setting up a variable to assign values
+// setting up a function to assign values
 assignProfile = () => {
+    let currentProfile = testimonials[counter];
     // image.src = currentProfile.img;
-    name.textContent = currentProfile.name;
+    personName.textContent = currentProfile.name;
     role.textContent = currentProfile.role;
     quote.textContent = currentProfile.quote;
 }
@@ -46,9 +46,9 @@ prevToggle.addEventListener('click', function () {
     counter--;
     if(counter < 0) {
         counter = testimonials.length - 1;
+        console.log(counter);
     }
     assignProfile();
-    console.log('wtf');
 })
 
 // setting up next button
@@ -58,5 +58,4 @@ nextToggle.addEventListener('click', function () {
         counter = 0;
     }
     assignProfile();
-    console.log('Im alive');
 })

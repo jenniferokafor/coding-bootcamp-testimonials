@@ -35,7 +35,7 @@ p {
 .picture-and-shapes {
     align-items: center;
     max-width: 327px;
-    height: 70vh;
+    min-height: 50vh;
     width: 100%;
     position: relative;
 }
@@ -67,7 +67,7 @@ p {
     z-index: 999;
     background-color: white;
     position: absolute;
-    top: 70%;
+    top: 67%;
     bottom: 0;
 }
 
@@ -113,4 +113,15 @@ p {
     color: rgba(185, 185, 206, 1);
     font-size: 0.938rem;
     font-weight: 500;
+}
+
+@media only screen and (min-width: 64rem) {
+    .testimonial-wrapper {
+        flex-direction: row-reverse;
+        margin: 0;
+    }
+
+    .text-wrapper {
+        max-width: 635px;
+    }
 }
